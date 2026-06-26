@@ -1,0 +1,15 @@
+[Unit]
+Description=Box Hinge Calculator — backend (FastAPI/CadQuery)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/box-hinge-calculator/backend
+ExecStart=/home/ubuntu/box-hinge-calculator/backend/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --log-level warning
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
