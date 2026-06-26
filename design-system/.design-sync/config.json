@@ -1,0 +1,10 @@
+{
+  "projectId": "202f604a-da83-48a5-84b6-f838b35c4973",
+  "shape": "package",
+  "pkg": "@box-hinge/blueprint-design-system",
+  "globalName": "BlueprintDS",
+  "srcDir": "src",
+  "cssEntry": "src/theme.css",
+  "buildCmd": "npm run build",
+  "readmeHeader": ".design-sync/conventions.md"
+}

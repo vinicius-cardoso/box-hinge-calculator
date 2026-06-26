@@ -1,0 +1,44 @@
+{
+  "shape": "package",
+  "styleSha": "46a24d9ecd6ca7165dbf031ba362d1258df3035bfbdb3f1afbbe7f765b7dbc88",
+  "renderHashes": {
+    "Badge": "a65b0c32e3cf8349",
+    "Button": "59434c305301605f",
+    "Dimension": "a51a2c2f40d0adf7",
+    "NumberField": "949f9074a56c08fc",
+    "Panel": "41d3726324ec308e",
+    "TitleBlock": "1e7d3f5ff051316a"
+  },
+  "sourceKeys": {
+    "Badge": "5d7e1018f9779dd6",
+    "Button": "c5685f869a6cd063",
+    "Dimension": "430c24ab804d95f2",
+    "NumberField": "0d00a6fad995514b",
+    "Panel": "85c32e26530a22fb",
+    "TitleBlock": "4224c3b1306d90f0"
+  },
+  "keyRecipe": 7,
+  "scriptsSha": "db90aa22b3ed1d3a",
+  "sourceHashes": {
+    "components/general/Badge/Badge.jsx": "e9c5ca6720d8",
+    "components/general/Badge/Badge.d.ts": "935926a1e469",
+    "components/general/Badge/Badge.prompt.md": "24ce07ee1048",
+    "components/general/Button/Button.jsx": "91fea28a76c3",
+    "components/general/Button/Button.d.ts": "3d67f7d34d96",
+    "components/general/Button/Button.prompt.md": "00bc25241543",
+    "components/general/Dimension/Dimension.jsx": "7312e2080488",
+    "components/general/Dimension/Dimension.d.ts": "799f6a1f0f52",
+    "components/general/Dimension/Dimension.prompt.md": "e0db4f9d64ec",
+    "components/general/NumberField/NumberField.jsx": "ba42e11a93b9",
+    "components/general/NumberField/NumberField.d.ts": "9e7f537f5c6b",
+    "components/general/NumberField/NumberField.prompt.md": "d1b8bcc17c7d",
+    "components/general/Panel/Panel.jsx": "401eebd5e01e",
+    "components/general/Panel/Panel.d.ts": "d8b14df2fe0b",
+    "components/general/Panel/Panel.prompt.md": "dd0ee67345e2",
+    "components/general/TitleBlock/TitleBlock.jsx": "f423384b7ff9",
+    "components/general/TitleBlock/TitleBlock.d.ts": "d1d0439bdc59",
+    "components/general/TitleBlock/TitleBlock.prompt.md": "4a2e1bc55962"
+  },
+  "auxSha": "ae92435783dedf1f",
+  "bundleSha12": "a5b7f20403a8"
+}

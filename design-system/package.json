@@ -1,0 +1,31 @@
+{
+  "name": "@box-hinge/blueprint-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Design System \"Blueprint\" — linguagem de prancheta de desenho técnico (grafite + verde + ISOCPEUR) para o Box Hinge Calculator.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "tsup": "^8.5.1",
+    "typescript": "^5"
+  }
+}

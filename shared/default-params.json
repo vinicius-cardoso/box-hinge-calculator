@@ -1,0 +1,23 @@
+{
+  "units": "mm",
+  "shared": {
+    "width": 60,
+    "length": 30,
+    "wallThickness": 1.2,
+    "holeDiameter": 2,
+    "panelThickness": 1.2
+  },
+  "box": {
+    "height": 16.2
+  },
+  "lid": {
+    "height": 6.2
+  },
+  "bars": {
+    "width": 4.8,
+    "pegDiameter": 2
+  },
+  "hinge": {
+    "openGap": 2
+  }
+}

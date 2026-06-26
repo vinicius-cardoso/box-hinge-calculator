@@ -1,0 +1,158 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": [
+          {
+            "element": "button",
+            "message": "Use <Button> from the design system instead of <button>."
+          }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "App.jsx",
+              "ControlsPanel.jsx",
+              "Viewport.jsx",
+              "components/general/Badge/**",
+              "components/general/Button/**",
+              "components/general/Dimension/**",
+              "components/general/NumberField/**",
+              "components/general/Panel/**",
+              "components/general/TitleBlock/**",
+              "engine.js",
+              "ui-components.jsx"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:ISOCPEUR))/i]",
+        "message": "Font not provided by the design system. Available: ISOCPEUR."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: children, variant."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|solid|dashed)$/]",
+        "message": "<Badge> variant must be one of 'outline' | 'solid' | 'dashed'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|id|style|children|variant|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: className, id, style, children, variant."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Dimension'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|key|ref|className|style|children)$/]",
+        "message": "<Dimension> doesn't accept that prop. Declared props: label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NumberField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|unit|min|max|onChange|key|ref|className|style|children)$/]",
+        "message": "<NumberField> doesn't accept that prop. Declared props: label, value, unit, min, max, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Panel'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|tag|children|key|ref|className|style|children)$/]",
+        "message": "<Panel> doesn't accept that prop. Declared props: title, tag, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TitleBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:eyebrow|children|cells|key|ref|className|style|children)$/]",
+        "message": "<TitleBlock> doesn't accept that prop. Declared props: eyebrow, children, cells."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": [
+          "button"
+        ]
+      },
+      "Dimension": {
+        "replaces": []
+      },
+      "NumberField": {
+        "replaces": []
+      },
+      "Panel": {
+        "replaces": []
+      },
+      "TitleBlock": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--ds-dim",
+      "--ds-display",
+      "--ds-faint",
+      "--ds-green",
+      "--ds-green-bright",
+      "--ds-green-deep",
+      "--ds-green-dim",
+      "--ds-ink",
+      "--ds-line",
+      "--ds-line-2",
+      "--ds-mono",
+      "--ds-muted",
+      "--ds-panel",
+      "--ds-paper",
+      "--ds-sans",
+      "--ds-sheet"
+    ],
+    "tokenKinds": {
+      "--ds-green": "color",
+      "--ds-green-bright": "color",
+      "--ds-green-dim": "color",
+      "--ds-green-deep": "color",
+      "--ds-paper": "color",
+      "--ds-sheet": "color",
+      "--ds-panel": "color",
+      "--ds-line": "color",
+      "--ds-line-2": "color",
+      "--ds-ink": "color",
+      "--ds-muted": "color",
+      "--ds-faint": "color",
+      "--ds-dim": "color",
+      "--ds-display": "font",
+      "--ds-sans": "font",
+      "--ds-mono": "font"
+    },
+    "fontFamilies": [
+      "ISOCPEUR"
+    ]
+  }
+}

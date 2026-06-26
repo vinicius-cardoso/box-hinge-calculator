@@ -1,0 +1,6 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2
+numpy>=1.26
+# Geometria CAD exata + exportação STEP/STL — puxa o kernel OpenCASCADE (cadquery-ocp).
+cadquery>=2.7

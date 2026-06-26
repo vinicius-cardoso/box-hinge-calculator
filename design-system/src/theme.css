@@ -1,0 +1,109 @@
+/* Design System "Blueprint" — tema global + classes de componentes.
+   ISOCPEUR embutida; usada só em títulos/rótulos/botões. */
+
+@font-face {
+  font-family: "ISOCPEUR";
+  src: url("./fonts/ISOCPEUR.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ds-green: #5ebe83;
+  --ds-green-bright: #84dba6;
+  --ds-green-dim: #3e8e5e;
+  --ds-green-deep: #1c3a2a;
+  --ds-paper: #0f1518;
+  --ds-sheet: #121a1e;
+  --ds-panel: #16201f;
+  --ds-line: #243036;
+  --ds-line-2: #2e3c40;
+  --ds-ink: #dce8e4;
+  --ds-muted: #7e8c88;
+  --ds-faint: #54605c;
+  --ds-dim: #79b9a4;
+
+  --ds-display: "ISOCPEUR", system-ui, sans-serif;
+  --ds-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ds-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Fundo de prancheta: grade técnica sutil sempre presente. */
+.ds-surface {
+  background-color: var(--ds-paper);
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  background-image:
+    linear-gradient(rgba(120, 180, 150, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 180, 150, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(120, 180, 150, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 180, 150, 0.09) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+}
+
+/* ---- Tipografia ---- */
+.ds-display { font-family: var(--ds-display); text-transform: uppercase; letter-spacing: .03em; font-weight: 600; line-height: 1; }
+.ds-label { font-family: var(--ds-mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ds-green); }
+.ds-mono { font-family: var(--ds-mono); font-variant-numeric: tabular-nums; }
+
+/* ---- Botões ---- */
+.ds-btn {
+  font-family: var(--ds-display); text-transform: uppercase; letter-spacing: .06em;
+  font-size: 14px; border-radius: 0; padding: 10px 16px; cursor: pointer;
+  transition: background .16s, box-shadow .16s;
+  border: 1px solid var(--ds-green); background: transparent; color: var(--ds-green-bright);
+}
+.ds-btn:hover { background: var(--ds-green-deep); box-shadow: 0 0 0 1px var(--ds-green); }
+.ds-btn:focus-visible { outline: 2px solid var(--ds-green-bright); outline-offset: 2px; }
+.ds-btn--primary { background: var(--ds-green); color: #0a130d; border-color: var(--ds-green); }
+.ds-btn--primary:hover { background: var(--ds-green-bright); box-shadow: 0 0 16px rgba(94, 190, 131, .4); }
+.ds-btn[disabled] { opacity: .4; cursor: not-allowed; box-shadow: none; }
+
+/* ---- NumberField (parâmetro) ---- */
+.ds-field { display: flex; flex-direction: column; gap: 6px; }
+.ds-field__label { font-family: var(--ds-mono); font-size: 11px; letter-spacing: .06em; color: var(--ds-muted); text-transform: uppercase; display: flex; justify-content: space-between; }
+.ds-field__label b { color: var(--ds-green-bright); font-weight: 400; }
+.ds-field__inp { display: flex; align-items: center; border: 1px solid var(--ds-line-2); background: var(--ds-paper); }
+.ds-field__inp input { flex: 1; background: transparent; border: 0; color: var(--ds-ink); font-family: var(--ds-mono); font-size: 14px; padding: 9px 11px; width: 100%; }
+.ds-field__inp input:focus { outline: none; }
+.ds-field__inp input:focus-visible { outline: none; box-shadow: inset 0 0 0 1px var(--ds-green-bright); }
+.ds-field__unit { font-family: var(--ds-mono); font-size: 11px; color: var(--ds-faint); padding: 0 11px; border-left: 1px solid var(--ds-line); }
+.ds-field__track { height: 3px; background: var(--ds-line-2); position: relative; margin-top: 2px; }
+.ds-field__fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ds-green); }
+.ds-field__thumb { position: absolute; top: 50%; width: 11px; height: 11px; background: var(--ds-green-bright); transform: translate(-50%, -50%); border: 2px solid var(--ds-paper); }
+
+/* ---- Panel ---- */
+.ds-panel { border: 1px solid var(--ds-line); background: var(--ds-sheet); }
+.ds-panel__head { display: flex; align-items: center; justify-content: space-between; padding: 9px 13px; border-bottom: 1px solid var(--ds-line); background: var(--ds-panel); }
+.ds-panel__title { font-family: var(--ds-display); text-transform: uppercase; letter-spacing: .05em; font-size: 14px; color: var(--ds-ink); }
+.ds-panel__tag { font-family: var(--ds-mono); font-size: 10px; color: var(--ds-faint); }
+.ds-panel__body { padding: 15px 14px; display: flex; flex-direction: column; gap: 13px; }
+
+/* ---- Badge ---- */
+.ds-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ds-mono); font-size: 11px; padding: 5px 9px; border: 1px solid var(--ds-green-dim); color: var(--ds-green-bright); border-radius: 0; }
+.ds-badge--dashed { border-style: dashed; border-color: var(--ds-line-2); color: var(--ds-muted); }
+.ds-badge--solid { background: var(--ds-green); color: #0a130d; border-color: var(--ds-green); }
+
+/* ---- Dimension (linha de cota) ---- */
+.ds-dim { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--ds-dim); }
+.ds-dim__label { font-family: var(--ds-mono); font-size: 11px; }
+.ds-dim__line { display: flex; align-items: center; width: 100%; }
+.ds-dim__tick { width: 1px; height: 11px; background: var(--ds-dim); }
+.ds-dim__rule { flex: 1; height: 1px; background: var(--ds-dim); position: relative; }
+.ds-dim__rule::before, .ds-dim__rule::after { content: ""; position: absolute; top: 50%; width: 6px; height: 1px; background: var(--ds-dim); }
+.ds-dim__rule::before { left: 0; transform: translateY(-50%) rotate(35deg); transform-origin: left; }
+.ds-dim__rule::after { right: 0; transform: translateY(-50%) rotate(-35deg); transform-origin: right; }
+
+/* ---- TitleBlock (bloco de título de desenho) ---- */
+.ds-titleblock { border: 1px solid var(--ds-line-2); background: var(--ds-sheet); display: flex; align-items: stretch; }
+.ds-titleblock__main { padding: 18px 20px; border-right: 1px solid var(--ds-line); flex: 1; }
+.ds-titleblock__eyebrow { font-family: var(--ds-mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ds-green); display: block; margin-bottom: 10px; }
+.ds-titleblock__title { font-family: var(--ds-display); text-transform: uppercase; font-weight: 600; font-size: clamp(24px, 5vw, 42px); line-height: .96; margin: 0; }
+.ds-titleblock__title em { font-style: normal; color: var(--ds-green); }
+.ds-titleblock__cell { padding: 12px 16px; border-right: 1px solid var(--ds-line); display: flex; flex-direction: column; justify-content: center; min-width: 80px; }
+.ds-titleblock__cell:last-child { border-right: 0; }
+.ds-titleblock__k { font-family: var(--ds-mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ds-faint); }
+.ds-titleblock__v { font-family: var(--ds-mono); font-size: 15px; color: var(--ds-green-bright); margin-top: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
